@@ -2,8 +2,8 @@
 Install git and create and account on gihub.
 
 1. Configure git on local device:
- git config --global user.name "your github username"
- git config --global user.email "your  github email account"
+ a. git config --global user.name "your github username"
+ b. git config --global user.email "your  github email account"
 
 2. clone repo:
 git clone https://github.com/roschfield/ecomwave.git
