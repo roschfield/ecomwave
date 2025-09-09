@@ -3,8 +3,8 @@
 Shop-Ecomwave
 @endsection
 @section('content')
-<section class="bg-white flex justify-center">
-          <div class="w-full max-w-[1200px]  flex flex-col gap-6">
+<section class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8 flex justify-center">
+          <div class="flex flex-col gap-6">
             
             <!-- Heading -->
             <div class="flex justify-start items-center">
@@ -14,10 +14,6 @@ Shop-Ecomwave
             <!-- Categories Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               
-              {{-- <!-- Category Card -->
-              @php
-                  $categories = App\Models\Category::latest()->get();
-              @endphp --}}
               @foreach ($categories as $category )
                   
               <div class="h-56 rounded-[32px] flex items-end p-4" 
