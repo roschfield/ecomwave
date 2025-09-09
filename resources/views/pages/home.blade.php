@@ -47,7 +47,7 @@ Home-Ecomwave
 <div class="container max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">  
     @foreach($collections as $collection)
        <div class="category-section mb-12">
-        <h2 class="text-2xl font-bold mb-4">{{ $collection->name }}</h2>
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 uppercase">{{ $collection->name }}</h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             @foreach($collection->products as $product)
@@ -72,30 +72,6 @@ Home-Ecomwave
     <a class="bg-black max-w-max py-3 px-4 text-white shadow" href="{{ route('shop') }}">Explore Products</a>
 </div>
 <!-- Testimonial Section-->
-<!-- Newsletter Section-->
-<section class="w-full bg-gradient-to-r from-[#00766e] via-green-800 to-[#00766e] py-16 px-4">
-  <div class="max-w-[1200px] mx-auto text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-      Subscribe to our Newsletter
-    </h2>
-    <p class="text-green-200 mb-8 max-w-2xl mx-auto">
-      Get the latest updates, articles, and resources straight to your inbox.
-    </p>
 
-    <form class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
-      <input 
-        type="email" 
-        placeholder="Enter your email" 
-        class="w-full sm:flex-1 px-4 py-3  border  focus:outline-none focus:ring-2 focus:ring-green-400"
-      >
-      <button 
-        type="submit" 
-        class="px-6 py-3 bg-black  text-white font-medium  transition-colors duration-200 w-full sm:w-auto"
-      >
-        Subscribe
-      </button>
-    </form>
-  </div>
-</section>
 
 @endsection
