@@ -64,6 +64,19 @@
         </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
           <div class="hidden sm:flex sm:items-center">
+             <!-- Cart Icon -->
+                <a href="{{ route('cart.cart') }}" class="relative flex items-center text-gray-700 hover:text-gray-900">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m13-9l2 9m-5-9V6a2 2 0 10-4 0v7" />
+                  </svg>
+                  @php $cartCount = count(session('cart', [])); @endphp
+                  @if($cartCount > 0)
+                    <span class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1">
+                      {{ $cartCount }}
+                    </span>
+                  @endif
+                </a>
             <a href="#" class="block rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105">Login</a>
             <a href="#" class="ml-4 block min-w-3xl rounded-sm bg-gray-900 px-4 py-3 text-sm font-medium text-white transition hover:scale-105">Sign Up</a>
           </div>
