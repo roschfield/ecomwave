@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function Index()
     {
-        
+         $categories= Category::where('is_active',1)->get();
         $collections = Collection::with(['products' => function ($query) {
             $query->where('is_active', true)
                 ->take(4); 
@@ -18,7 +18,7 @@ class HomeController extends Controller
             ->take(2)
             ->get();
 
-       return view('pages.home', compact('collections'));
+       return view('pages.home', compact('collections','categories'));
     }
 
     public function Shop()

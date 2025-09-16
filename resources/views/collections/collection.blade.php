@@ -3,7 +3,7 @@
 Collection-Ecomwave
 @endsection
 @section('content')
-<div class="container mx-auto py-10">
+<div class="container max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
     <h1 class="text-3xl font-bold mb-6">All {{ $collection->name }}</h1>
     @if($collection->products->isEmpty())
                    <p class="text-gray-500">No products available at the moment.</p>

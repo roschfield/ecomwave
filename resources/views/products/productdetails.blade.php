@@ -3,7 +3,7 @@
 Product Details-Ecomwave
 @endsection
 @section('content')
-<div class="container mx-auto py-10">
+<div class="container max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Product Image -->
         <div>
@@ -45,7 +45,7 @@ Product Details-Ecomwave
                            class="w-24 border border-gray-300 rounded px-2 py-1">
                     
                     <button type="submit" 
-                            class="ml-3 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                            class="ml-3 bg-black text-white px-4 py-2 transition">
                         Add to Cart
                     </button>
                 </form>
