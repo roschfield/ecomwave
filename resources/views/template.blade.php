@@ -18,7 +18,6 @@
       <div class="relative flex items-center justify-between h-16">
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex-shrink-0 flex items-center">
-            <img class="block h-8 w-auto" src="{{ asset('storage/images/logo.svg') }}" alt="Logo">
             <span class="ml-2 text-xl font-bold text-gray-800">Ecomwave</span>
           </div>
           <div class="hidden sm:block sm:ml-6">
