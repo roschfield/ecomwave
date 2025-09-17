@@ -4,6 +4,11 @@ Product Details-Ecomwave
 @endsection
 @section('content')
 <div class="container max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+     @if(session('success'))
+        <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Product Image -->
         <div>
