@@ -65,11 +65,11 @@
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
           <div class="hidden sm:flex sm:items-center">
              <!-- Cart Icon -->
-                <a href="{{ route('cart.cart') }}" class="relative flex items-center text-gray-700 hover:text-gray-900">
-                  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m13-9l2 9m-5-9V6a2 2 0 10-4 0v7" />
+                <a href="{{ route('cart.cart') }}" class="relative flex items-center text-gray-700 hover:text-gray-900 mr-3">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                   </svg>
+
                   @php $cartCount = count(session('cart', [])); @endphp
                   @if($cartCount > 0)
                     <span class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1">
@@ -77,9 +77,30 @@
                     </span>
                   @endif
                 </a>
-            <a href="#" class="block rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105">Login</a>
-            <a href="#" class="ml-4 block min-w-3xl rounded-sm bg-gray-900 px-4 py-3 text-sm font-medium text-white transition hover:scale-105">Sign Up</a>
-          </div>
+                @auth
+                  <!-- User Dropdown -->
+                  <div class="relative group">
+                    <button class="flex items-center space-x-1 text-gray-700 hover:text-gray-900">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                      </svg>
+
+                      <span>{{ Auth::user()->name }}</span>
+                    </button>
+                    <div class="absolute right-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                      <a href="{{ route('dashboard') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                      <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</button>
+                      </form>
+                    </div>
+                  </div>
+                @else
+                  <!-- Guest -->
+                  <a href="{{ route('login') }}" class="block rounded-sm bg-gray-100 px-4 py-2 text-sm font-medium text-gray-900 transition hover:scale-105">Login</a>
+                  <a href="{{ route('register') }}" class="ml-2 block rounded-sm bg-gray-900 px-4 py-2 text-sm font-medium text-white transition hover:scale-105">Sign Up</a>
+                @endauth
+            </div>
 
           <!-- Mobile menu button -->
           <div class="sm:hidden">
